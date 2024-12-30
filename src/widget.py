@@ -17,3 +17,14 @@ def mask_account_card(info):
         return f"{info.rsplit(' ', 1)[0]} {mask_card_number(card_number)}"
 
 
+
+from datetime import datetime
+
+def get_date(date_string):
+    # Парсим строку с датой в объект datetime
+    date_object = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f")
+    # Возвращаем строку в нужном формате
+    return date_object.strftime("%d.%m.%Y")
+
+# Пример использования:
+print(get_date("2024-03-11T02:26:18.671407"))
