@@ -2,13 +2,19 @@ from datetime import datetime
 
 
 def mask_card_number(card_number: str) -> str:
-    """Пример маскировки номера карты: оставить первые 4 и последние 4 цифры"""
-    return card_number[:4] + '*' * (len(card_number) - 8) + card_number[-4:]
+    """Маскировка номера карты: оставить первые 4 и последние 4 цифры"""
+    if len(card_number) > 8:
+        return card_number[:4] + '*' * (len(card_number) - 8) + card_number[-4:]
+    return card_number
 
 
 def mask_account_number(account_number: str) -> str:
-    """Пример маскировки номера счета: оставить только последние 4 цифры"""
-    return '*' * (len(account_number) - 4) + account_number[-4:]
+    """Маскировка номера счета: оставить только последние 4 цифры"""
+    length = len(account_number)
+    if length > 4:
+        return '*' * (length - 4) + account_number[-4:]
+    return '*' * (length - 2) + account_number[-2:]
+
 
 
 def mask_account_card(info: str) -> str:
@@ -19,7 +25,13 @@ def mask_account_card(info: str) -> str:
     else:
         """Маскировка номера карты"""
         card_number = info.split()[-1]
-        return f"{info.rsplit(' ', 1)[0]} {mask_card_number(card_number)}"
+        # Здесь добавим обработку на случай некорректного номера
+        if len(card_number) >= 8:
+            return f"{info.rsplit(' ', 1)[0]} {mask_card_number(card_number)}"
+        else:
+            # Маскировка для короткого номера
+            return f"{info.rsplit(' ', 1)[0]} {'*' * (len(card_number) - 2)}{card_number[-2:]}"
+
 
 
 def get_date(date_string: str) -> str:
