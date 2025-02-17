@@ -1,5 +1,5 @@
 import pytest
-from src.widget import mask_card_number, mask_account_number, mask_account_card, get_date
+from tests import mask_card_number, mask_account_number, mask_account_card, get_date
 
 # Фикстура для номеров карт
 @pytest.fixture

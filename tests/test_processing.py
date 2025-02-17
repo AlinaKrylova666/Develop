@@ -1,6 +1,5 @@
 import pytest
-from typing import List, Dict
-from src.processing import filter_by_state, sort_by_date  # Замени your_module на имя модуля
+from tests import filter_by_state, sort_by_date  # Замени your_module на имя модуля
 
 # Фикстура для тестовых данных транзакций
 @pytest.fixture

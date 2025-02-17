@@ -1,5 +1,5 @@
 import pytest
-from src.masks import get_mask_card_number, get_mask_account
+from src import (get_mask_card_number, get_mask_account)
 
 # Фикстура для тестовых данных карт
 @pytest.fixture

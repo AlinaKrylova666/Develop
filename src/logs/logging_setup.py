@@ -4,8 +4,8 @@ import os
 def setup_logger(name, log_file, level=logging.INFO):
     """Функция для настройки логирования."""
     # Убедитесь, что папка для логов существует
-    if not os.path.exists('logs'):
-        os.makedirs('logs')
+    if not os.path.exists('../../logs'):
+        os.makedirs('../../logs')
 
     # Настроить формат логов
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

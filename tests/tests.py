@@ -1,6 +1,6 @@
 import unittest
 
-from home import filter_by_currency
+from tests import filter_by_currency
 
 
 class TestFilterByCurrency(unittest.TestCase):
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
 import unittest
 
-from generator import transaction_descriptions, card_number_generator
+from tests import transaction_descriptions, card_number_generator
 
 
 class TestGenerators(unittest.TestCase):

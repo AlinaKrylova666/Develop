@@ -1,6 +1,4 @@
-import json
-import os
-from logging_setup import setup_logger
+from src.logs.logging_setup import setup_logger
 
 # Настройка логгера для utils
 logger = setup_logger('utils', 'logs/utils.log')
@@ -33,7 +31,7 @@ if __name__ == "__main__":
 import pandas as pd
 import json
 import os
-from logging_setup import setup_logger
+from src.logs.logging_setup import setup_logger
 
 # Настройка логгера для utils
 logger = setup_logger('utils', 'logs/utils.log')

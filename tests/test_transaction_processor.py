@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from transaction_processor import convert_transaction_to_rub
+from src.transaction_processor import convert_transaction_to_rub
 
 class TestTransactionProcessor(unittest.TestCase):
 

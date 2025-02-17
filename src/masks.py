@@ -1,4 +1,4 @@
-from logging_setup import setup_logger
+from src.logs.logging_setup import setup_logger
 
 # Настроить логгер для masks
 logger = setup_logger('masks', 'logs/masks.log')
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     print(get_mask_card_number(card_number))  # Вывод: ************5678
 
 
-from logging_setup import setup_logger
+from src.logs.logging_setup import setup_logger
 
 # Настроить логгер для masks
 logger = setup_logger('masks', 'logs/masks.log')

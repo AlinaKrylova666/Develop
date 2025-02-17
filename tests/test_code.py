@@ -1,5 +1,4 @@
-import pytest
-from src.masks import get_mask_card_number
+from tests import get_mask_card_number
 
 def test_get_mask_card_number_valid():
     # Тестирование корректного номера карты
@@ -20,8 +19,7 @@ def test_get_mask_card_number_invalid_format():
     assert get_mask_card_number(card_number) == expected_result
 
 
-import pytest
-from src.masks import get_mask_account
+from tests import get_mask_account
 
 def test_get_mask_account_valid():
     # Тестирование корректного номера счета
@@ -48,8 +46,7 @@ def test_get_mask_account_invalid_length_and_characters():
     assert get_mask_account(account_number) == expected_result
 
 
-import pytest
-from src.widget import mask_account_card
+from tests import mask_account_card
 
 def test_mask_account_card_with_account():
     # Тестирование маскировки информации с номером счета
@@ -70,9 +67,7 @@ def test_mask_account_card_with_invalid_info():
     assert mask_account_card(info) == expected_result
 
 
-import pytest
-from datetime import datetime
-from src.widget import get_date
+from tests import get_date
 
 def test_get_date():
     # Тестирование корректного преобразования строки даты
@@ -86,9 +81,7 @@ def test_get_date_invalid_format():
         get_date("05-10-2023")
 
 
-import pytest
-from typing import List, Dict
-from src.processing import filter_by_state
+from tests import filter_by_state
 
 def test_filter_by_state_default():
     # Тестирование фильтрации с состоянием по умолчанию 'EXECUTED'
@@ -127,8 +120,7 @@ def test_filter_by_state_no_matches():
 
 
 import pytest
-from typing import List, Dict
-from src.processing import sort_by_date
+from tests import sort_by_date
 
 def test_sort_by_date_descending():
     # Тестирование сортировки по убыванию по умолчанию
