@@ -1,10 +1,11 @@
 import unittest
 from unittest.mock import patch
-from src import convert_transaction_to_rub
+from src.external_api import convert_transaction_to_rub
+
 
 class TestCurrencyConversion(unittest.TestCase):
 
-    @patch('external_api.requests.get')
+    @patch('src.external_api.requests.get')
     def test_convert_usd_to_rub(self, mock_get):
         # Mocking the API response
         mock_get.return_value.status_code = 200
@@ -25,7 +26,7 @@ class TestCurrencyConversion(unittest.TestCase):
         result = convert_transaction_to_rub(transaction)
         self.assertEqual(result, 75000.0)
 
-    @patch('external_api.requests.get')
+    @patch('src.external_api.requests.get')
     def test_convert_eur_to_rub(self, mock_get):
         # Mocking the API response
         mock_get.return_value.status_code = 200
@@ -59,6 +60,7 @@ class TestCurrencyConversion(unittest.TestCase):
 
         result = convert_transaction_to_rub(transaction)
         self.assertEqual(result, 1000.0)
+
 
 if __name__ == '__main__':
     unittest.main()

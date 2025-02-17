@@ -1,6 +1,6 @@
 import unittest
-
-from tests import filter_by_currency
+from src.home import filter_by_currency
+from src.generator import transaction_descriptions, card_number_generator
 
 
 class TestFilterByCurrency(unittest.TestCase):
@@ -30,14 +30,6 @@ class TestFilterByCurrency(unittest.TestCase):
             {'id': 2, 'amount': 200, 'currency': 'EUR'},
         ]
         self.assertEqual(result, expected)
-
-
-if __name__ == '__main__':
-    unittest.main()
-
-import unittest
-
-from tests import transaction_descriptions, card_number_generator
 
 
 class TestGenerators(unittest.TestCase):

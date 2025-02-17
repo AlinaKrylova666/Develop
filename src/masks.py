@@ -3,6 +3,7 @@ from src.logs.logging_setup import setup_logger
 # Настроить логгер для masks
 logger = setup_logger('masks', 'logs/masks.log')
 
+
 def get_mask_card_number(card_number):
     """Маскирует номер банковской карты, оставляя видимыми только последние 4 цифры."""
     try:
@@ -16,16 +17,6 @@ def get_mask_card_number(card_number):
         logger.error(f"An error occurred while masking card number: {e}")
         return None
 
-if __name__ == "__main__":
-    # Пример использования функции
-    card_number = "1234567812345678"
-    print(get_mask_card_number(card_number))  # Вывод: ************5678
-
-
-from src.logs.logging_setup import setup_logger
-
-# Настроить логгер для masks
-logger = setup_logger('masks', 'logs/masks.log')
 
 def get_mask_account(account_number):
     """Маскирует номер банковского счета, оставляя видимыми только последние 4 символа."""
@@ -40,7 +31,11 @@ def get_mask_account(account_number):
         logger.error(f"An error occurred while masking account number: {e}")
         return None
 
+
 if __name__ == "__main__":
     # Пример использования функции
+    card_number = "1234567812345678"
+    print(get_mask_card_number(card_number))  # Вывод: ************5678
+
     account_number = "1234567890123456"
     print(get_mask_account(account_number))  # Вывод: ************3456

@@ -6,7 +6,11 @@ def filter_by_currency(transactions, currency):
     :param currency: строка, обозначающая валюту для фильтрации (например, 'USD')
     :return: итератор, выдающий транзакции с указанной валютой
     """
-    return (transaction for transaction in transactions if transaction.get('currency') == currency)
+    return (
+        transaction for transaction in transactions
+        if transaction.get('currency') == currency
+    )
+
 
 # Пример использования:
 transactions = [
@@ -19,4 +23,3 @@ filtered_transactions = filter_by_currency(transactions, 'USD')
 
 for transaction in filtered_transactions:
     print(transaction)
-

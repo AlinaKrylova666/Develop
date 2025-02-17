@@ -6,8 +6,13 @@ def transaction_descriptions(transactions):
     :yield: строка с описанием транзакции
     """
     for transaction in transactions:
-        description = f"Transaction ID: {transaction.get('id')}, Amount: {transaction.get('amount')}, Currency: {transaction.get('currency')}"
+        description = (
+            f"Transaction ID: {transaction.get('id')}, "
+            f"Amount: {transaction.get('amount')}, "
+            f"Currency: {transaction.get('currency')}"
+        )
         yield description
+
 
 # Пример использования:
 transactions = [
@@ -32,8 +37,12 @@ def card_number_generator(start, end):
         # Преобразуем число в строку с ведущими нулями до 16 символов
         card_number = f"{number:016}"
         # Форматируем строку в виде XXXX XXXX XXXX XXXX
-        formatted_card_number = f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
+        formatted_card_number = (
+            f"{card_number[:4]} {card_number[4:8]} "
+            f"{card_number[8:12]} {card_number[12:]}"
+        )
         yield formatted_card_number
+
 
 # Пример использования:
 start = 1
