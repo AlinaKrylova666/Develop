@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Пример использования функций
     json_transactions = load_transactions_from_json('data/transactions.json')
     csv_transactions = load_transactions_from_csv('../data/transactions.csv')
-    xlsx_transactions = load_transactions_from_xlsx('../data/transactions_excel.xlsx')
+    xlsx_transactions = load_transactions_from_xlsx('../data/transactions.xlsx')
 
     print(f"JSON Transactions: {json_transactions}")
     print(f"CSV Transactions: {csv_transactions}")
