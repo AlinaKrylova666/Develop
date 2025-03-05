@@ -70,6 +70,17 @@ files = [
 ]
 
 [[package]]
+name = "decorator"
+version = "5.1.1"
+description = "Decorators for Humans"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
+    {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
+]
+
+[[package]]
 name = "flake8"
 version = "7.1.1"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -293,4 +304,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "f7a22f752469b519af075cf78f89199c3773945b45b3bf88dd4f7a449eac28a0"
+content-hash = "5dd0ac4d8c5c3c93051cda52679b4e64903216c2891b5e0b276580ecb6268d0d"

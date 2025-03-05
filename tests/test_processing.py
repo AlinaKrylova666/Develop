@@ -1,6 +1,6 @@
 import pytest
-from typing import List, Dict
-from src.processing import filter_by_state, sort_by_date  # Замени your_module на имя модуля
+from src.processing import filter_by_state, sort_by_date
+
 
 # Фикстура для тестовых данных транзакций
 @pytest.fixture
@@ -13,12 +13,14 @@ def transactions_data():
         {"id": 5, "state": "PENDING", "date": "2023-10-01"},
     ]
 
+
 def test_filter_by_state_default(transactions_data):
     expected_result = [
         {"id": 1, "state": "EXECUTED", "date": "2023-10-01"},
         {"id": 3, "state": "EXECUTED", "date": "2023-10-02"}
     ]
     assert filter_by_state(transactions_data) == expected_result
+
 
 def test_filter_by_state_custom(transactions_data):
     expected_result = [
@@ -27,9 +29,11 @@ def test_filter_by_state_custom(transactions_data):
     ]
     assert filter_by_state(transactions_data, state="PENDING") == expected_result
 
+
 def test_filter_by_state_no_matches(transactions_data):
     expected_result = []
     assert filter_by_state(transactions_data, state="FAILED") == expected_result
+
 
 def test_sort_by_date_descending(transactions_data):
     expected_result = [
@@ -40,6 +44,7 @@ def test_sort_by_date_descending(transactions_data):
         {"id": 2, "date": "2023-09-30", "state": "PENDING"}
     ]
     assert sort_by_date(transactions_data) == expected_result
+
 
 def test_sort_by_date_ascending(transactions_data):
     expected_result = [
